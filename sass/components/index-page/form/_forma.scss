@@ -1,0 +1,154 @@
+.form {
+  width: 448px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.form-title {
+  text-align: center;
+  font-weight: map-get($colors, "bold");
+  font-size: 20px;
+  line-height: 1.15;
+}
+.form-label {
+  margin-top: 10px;
+  margin-bottom: 4px;
+
+  color: map-get($colors, "secondary");
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: map-get($letterSpacing, "little");
+}
+.form-input {
+  height: 40px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  & .texterea-text {
+    padding: 16px;
+    height: 120px;
+    &::placeholder {
+      font-size: 14px;
+      line-height: 1.16;
+      color: rgba(117, 117, 117, 0.5);
+    }
+  }
+}
+.form-chek {
+  text-align: center;
+  & label {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 14px;
+    line-height: 1.71;
+
+    @extend %transition;
+    color: map-get($colors, "secondary");
+  }
+}
+.form-chek input[type="checkbox"] {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  text-align: center;
+}
+.span-icon {
+  display: inline-block;
+  margin-right: 8px;
+
+  width: 15px;
+  height: 16px;
+
+  border: 2px solid map-get($colors, "primary");
+  border-radius: 4px;
+}
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.form-input:checked + .span-icon {
+  border: map-get($colors, "accent");
+  background-color: map-get($colors, "accent");
+  background-image: url("../images/svg/Vectorok.svg");
+  @extend %backgroundIcon;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: contain;
+  background-origin: border-box;
+}
+.form-no {
+  outline: none;
+  padding-left: 43px;
+}
+.form-no:focus {
+  border: 1px solid map-get($colors, "accent");
+}
+.icon-form {
+  position: absolute;
+  top: 38px;
+  left: 15px;
+
+  display: inline-block;
+  fill: map-get($colors, "primary");
+  @extend %transition;
+}
+.form-input:focus ~ .icon-form {
+  fill: map-get($colors, "accent");
+}
+
+.submit {
+  font-family: "Roboto";
+  font-weight: map-get($fontWeight, "bold");
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: map-get($letterSpacing, "most");
+
+  margin-top: 30px;
+  margin-bottom: 40px;
+  padding: 10px 55px;
+
+  @extend %transition;
+  background-color: map-get($colors, "accent");
+  color: map-get($colors, "title");
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+submit:focus,
+.submit:hover {
+  background-color: map-get($colors, "btn-focus");
+}
+.span-check {
+  color: map-get($colors, "accent");
+  text-decoration: underline;
+}
+
+.span-check-text:focus {
+  color: map-get($colors, "secondary");
+}

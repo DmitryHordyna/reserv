@@ -1,0 +1,30 @@
+.client-list {
+  @extend %flexcardset;
+  & .client-item {
+    margin-left: 30px;
+    flex-basis: calc(100% / 6 - 30px);
+  }
+}
+
+.client-item {
+  @extend %flexboxcentre;
+  width: 170px;
+  height: 90px;
+
+  border: 1px solid map-get($colors, "icon");
+  border-radius: 4px;
+
+  @extend %transition;
+  &:hover,
+  :focus {
+    border: 1px solid map-get($colors, "accent");
+    @extend %transition;
+    & svg {
+      fill: map-get($colors, "accent");
+    }
+  }
+}
+.company {
+  fill: map-get($colors, "icon");
+  @extend %transition;
+}

@@ -1,0 +1,92 @@
+.header {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  border: 1px solid map-get($colors, "topcolor");
+}
+.main-nav {
+  @extend %flexboxcentre;
+}
+.site-nav {
+  display: flex;
+  margin-right: auto;
+
+  & .item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+.address-nav {
+  display: flex;
+  margin-left: auto;
+
+  & .item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+.site-nav-item {
+  position: relative;
+}
+.link-site {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: map-get($colors, "primary");
+  font-weight: map-get($fontWeight, "medial");
+  letter-spacing: map-get($letterSpacing, "small");
+  font-size: 14px;
+  line-height: 1.14;
+
+  @extend %transition;
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -39px;
+
+    width: 100%;
+    height: 5px;
+    background-color: map-get($colors, "accent");
+    border: 1px solid map-get($colors, "accent");
+    border-radius: 2px;
+    transform: scaleX(0);
+    @extend %transition;
+  }
+}
+.link-active {
+  color: map-get($colors, "accent");
+  &::after {
+    transform: scaleX(1);
+  }
+}
+.link-current:hover,
+.link-current:focus {
+  color: map-get($colors, "accent");
+  &::after {
+    transform: scaleX(1);
+  }
+}
+.address-link {
+  @extend %flexboxcentre;
+  color: map-get($colors, "secondary");
+
+  font-weight: map-get($fontWeight, "medial");
+  letter-spacing: map-get($letterSpacing, "small");
+  font-size: 14px;
+  line-height: 1.14;
+
+  @extend %transition;
+  &:focus,
+  &:hover {
+    color: map-get($colors, "accent");
+  }
+  & svg {
+    @extend %transition;
+  }
+}
+.address-link:hover svg,
+.address-link:focus svg {
+  fill: map-get($colors, "accent");
+}
+.send-icon {
+  margin-right: 10px;
+}

@@ -1,0 +1,65 @@
+.team {
+  background-color: map-get($colors, "backcolor");
+}
+.team-list {
+  @extend %flexcardset;
+  & .team-item {
+    margin-left: 30px;
+
+    flex-basis: calc(100% / 4 - 37px);
+  }
+}
+.team-item {
+  text-align: center;
+  background: map-get($colors, "title");
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+.team-title-card {
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  color: map-get($colors, "primary");
+  font-weight: map-get($fontWeight, "medial");
+  font-size: 16px;
+  line-height: 1.18;
+}
+.team-text {
+  margin-bottom: 16px;
+
+  color: map-get($colors, "secondary");
+  font-weight: map-get($colors, "normal");
+  font-size: 16px;
+  line-height: 1.18;
+}
+.team-icon {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+
+  & .team-item-icon {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    @extend %transition;
+    &:hover,
+    :focus {
+      background-color: map-get($colors, "accent");
+    }
+  }
+}
+.team-link-icon {
+  fill: map-get($colors, "icon");
+  @extend %transition;
+  &:hover,
+  :focus {
+    @extend %transition;
+    fill: map-get($colors, "title");
+  }
+}
